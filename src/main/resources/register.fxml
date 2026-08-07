@@ -10,22 +10,20 @@
 <VBox alignment="CENTER" spacing="15.0"
       xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.chatapp.client.LoginController"
+      fx:controller="com.chatapp.client.RegisterController"
       stylesheets="@style.css">
     <padding>
         <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
     </padding>
 
-    <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #cdd6f4;" text="Chat Application Login" />
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #cdd6f4;" text="Create Account" />
 
     <TextField fx:id="usernameField" promptText="Enter Username" />
-
     <PasswordField fx:id="passwordField" promptText="Enter Password" />
+    <TextField fx:id="emailField" promptText="Enter Email" />
 
-    <Button fx:id="loginButton" onAction="#handleLogin" prefWidth="150.0" text="Login" />
-
-    <!-- Register Navigation Button -->
-    <Button fx:id="registerButton" onAction="#handleSwitchToRegister" prefWidth="180.0" text="Register New Account" style="-fx-background-color: transparent; -fx-text-fill: #89b4fa; -fx-underline: true;" />
+    <Button onAction="#handleRegister" prefWidth="150.0" text="Register" />
+    <Button onAction="#handleBackToLogin" prefWidth="180.0" text="Back to Login" style="-fx-background-color: transparent; -fx-text-fill: #89b4fa; -fx-underline: true;" />
 
     <Label fx:id="errorLabel" style="-fx-text-fill: #f38ba8;" />
 </VBox>

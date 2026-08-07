@@ -44,4 +44,17 @@ public class LoginController {
             errorLabel.setText("Invalid username or password.");
         }
     }
+
+    @FXML
+    protected void handleSwitchToRegister() {
+        try {
+            Stage stage = (Stage) usernameField.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/register.fxml"));
+            Scene scene = new Scene(loader.load(), 400, 350);
+            stage.setScene(scene);
+            stage.setTitle("Chat Application - Register");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
