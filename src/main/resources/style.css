@@ -1,0 +1,56 @@
+/* General Root Styles */
+.root {
+    -fx-font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    -fx-background-color: #1e1e2e;
+}
+
+/* Chat Display Area */
+.text-area {
+    -fx-background-color: #252538;
+    -fx-text-fill: #cdd6f4;
+    -fx-control-inner-background: #181825;
+    -fx-highlight-fill: #45475a;
+    -fx-highlight-text-fill: #cdd6f4;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #313244;
+}
+
+.text-area .content {
+    -fx-background-color: #181825;
+}
+
+/* Text Fields / Input */
+.text-field {
+    -fx-background-color: #313244;
+    -fx-text-fill: #cdd6f4;
+    -fx-prompt-text-fill: #6c7086;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-padding: 8px 12px;
+}
+
+.text-field:focused {
+    -fx-border-color: #89b4fa;
+    -fx-border-width: 1.5px;
+    -fx-background-color: #313244;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #89b4fa;
+    -fx-text-fill: #11111b;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #b4befe;
+}
+
+.button:pressed {
+    -fx-background-color: #74c7ec;
+}
