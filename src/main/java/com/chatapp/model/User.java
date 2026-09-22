@@ -13,15 +13,26 @@ public class User {
     public User() {
     }
 
+    // Constructor for login
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    // Constructor for registration
     public User(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
     }
 
-    public User(String username, String password) {
+    // Full Constructor
+    public User(int id, String username, String password, String email, Timestamp createdAt) {
+        this.id = id;
         this.username = username;
         this.password = password;
+        this.email = email;
+        this.createdAt = createdAt;
     }
 
     public int getId() {
@@ -62,5 +73,14 @@ public class User {
 
     public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

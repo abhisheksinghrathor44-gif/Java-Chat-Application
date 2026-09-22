@@ -6,28 +6,35 @@ public class Message {
 
     private int id;
     private String sender;
-    private String receiver;      // NEW
+    private String receiver;
     private String message;
-    private boolean isPrivate;    // NEW
+    private boolean isPrivate;
     private Timestamp sentTime;
 
     public Message() {
     }
 
-    // Constructor for group messages
+    // Constructor for public broadcast messages
     public Message(String sender, String message) {
-        this.sender = sender;
-        this.message = message;
-        this.receiver = null;
-        this.isPrivate = false;
+        this(sender, null, message, false);
     }
 
-    // Constructor for private messages
+    // Constructor for targeted/private messages
     public Message(String sender, String receiver, String message, boolean isPrivate) {
         this.sender = sender;
         this.receiver = receiver;
         this.message = message;
         this.isPrivate = isPrivate;
+    }
+
+    // Full Constructor
+    public Message(int id, String sender, String receiver, String message, boolean isPrivate, Timestamp sentTime) {
+        this.id = id;
+        this.sender = sender;
+        this.receiver = receiver;
+        this.message = message;
+        this.isPrivate = isPrivate;
+        this.sentTime = sentTime;
     }
 
     public int getId() {
@@ -66,8 +73,8 @@ public class Message {
         return isPrivate;
     }
 
-    public void setPrivate(boolean aPrivate) {
-        isPrivate = aPrivate;
+    public void setPrivate(boolean isPrivate) {
+        this.isPrivate = isPrivate;
     }
 
     public Timestamp getSentTime() {
@@ -76,5 +83,13 @@ public class Message {
 
     public void setSentTime(Timestamp sentTime) {
         this.sentTime = sentTime;
+    }
+
+    @Override
+    public String toString() {
+        if (isPrivate) {
+            return String.format("[%s -> %s]: %s", sender, receiver, message);
+        }
+        return String.format("[%s]: %s", sender, message);
     }
 }
